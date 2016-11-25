@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A35E6D21DE813E700831D0B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E6D11DE813E700831D0B /* TableViewController.swift */; };
+		4A35E6D41DE8194500831D0B /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E6D31DE8194500831D0B /* CollectionViewController.swift */; };
 		4A8B4FE91DE7164C005BF073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B4FE81DE7164C005BF073 /* AppDelegate.swift */; };
-		4A8B4FEB1DE7164C005BF073 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B4FEA1DE7164C005BF073 /* ViewController.swift */; };
 		4A8B4FEE1DE7164C005BF073 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A8B4FEC1DE7164C005BF073 /* Main.storyboard */; };
 		4A8B4FF01DE7164C005BF073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A8B4FEF1DE7164C005BF073 /* Assets.xcassets */; };
 		4A8B4FF31DE7164C005BF073 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A8B4FF11DE7164C005BF073 /* LaunchScreen.storyboard */; };
+		4A8B4FFF1DE71683005BF073 /* SWImagePickerAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B4FFB1DE71683005BF073 /* SWImagePickerAlbumCell.swift */; };
+		4A8B50001DE71683005BF073 /* SWImagePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B4FFC1DE71683005BF073 /* SWImagePickerCell.swift */; };
+		4A8B50011DE71683005BF073 /* SWImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B4FFD1DE71683005BF073 /* SWImagePickerController.swift */; };
+		4A8B50021DE71683005BF073 /* SWImagePickerTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B4FFE1DE71683005BF073 /* SWImagePickerTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A35E6D11DE813E700831D0B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		4A35E6D31DE8194500831D0B /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		4A8B4FE51DE7164C005BF073 /* SWImagePickerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWImagePickerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8B4FE81DE7164C005BF073 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4A8B4FEA1DE7164C005BF073 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4A8B4FED1DE7164C005BF073 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A8B4FEF1DE7164C005BF073 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A8B4FF21DE7164C005BF073 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A8B4FF41DE7164C005BF073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A8B4FFB1DE71683005BF073 /* SWImagePickerAlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWImagePickerAlbumCell.swift; sourceTree = "<group>"; };
+		4A8B4FFC1DE71683005BF073 /* SWImagePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWImagePickerCell.swift; sourceTree = "<group>"; };
+		4A8B4FFD1DE71683005BF073 /* SWImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWImagePickerController.swift; sourceTree = "<group>"; };
+		4A8B4FFE1DE71683005BF073 /* SWImagePickerTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWImagePickerTitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +48,8 @@
 		4A8B4FDC1DE7164C005BF073 = {
 			isa = PBXGroup;
 			children = (
-				4A8B4FE71DE7164C005BF073 /* SWImagePickerController */,
+				4A8B4FFA1DE71683005BF073 /* SWImagePickerController */,
+				4A8B4FE71DE7164C005BF073 /* Demo */,
 				4A8B4FE61DE7164C005BF073 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,17 +62,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4A8B4FE71DE7164C005BF073 /* SWImagePickerController */ = {
+		4A8B4FE71DE7164C005BF073 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
 				4A8B4FE81DE7164C005BF073 /* AppDelegate.swift */,
-				4A8B4FEA1DE7164C005BF073 /* ViewController.swift */,
+				4A35E6D11DE813E700831D0B /* TableViewController.swift */,
+				4A35E6D31DE8194500831D0B /* CollectionViewController.swift */,
 				4A8B4FEC1DE7164C005BF073 /* Main.storyboard */,
 				4A8B4FEF1DE7164C005BF073 /* Assets.xcassets */,
 				4A8B4FF11DE7164C005BF073 /* LaunchScreen.storyboard */,
 				4A8B4FF41DE7164C005BF073 /* Info.plist */,
 			);
+			name = Demo;
 			path = SWImagePickerController;
+			sourceTree = "<group>";
+		};
+		4A8B4FFA1DE71683005BF073 /* SWImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B4FFB1DE71683005BF073 /* SWImagePickerAlbumCell.swift */,
+				4A8B4FFC1DE71683005BF073 /* SWImagePickerCell.swift */,
+				4A8B4FFD1DE71683005BF073 /* SWImagePickerController.swift */,
+				4A8B4FFE1DE71683005BF073 /* SWImagePickerTitleView.swift */,
+			);
+			name = SWImagePickerController;
+			path = SWImagePickerController/SWImagePickerController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +121,8 @@
 				TargetAttributes = {
 					4A8B4FE41DE7164C005BF073 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 9LJHCTN42A;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -136,7 +163,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A8B4FEB1DE7164C005BF073 /* ViewController.swift in Sources */,
+				4A8B4FFF1DE71683005BF073 /* SWImagePickerAlbumCell.swift in Sources */,
+				4A35E6D21DE813E700831D0B /* TableViewController.swift in Sources */,
+				4A8B50021DE71683005BF073 /* SWImagePickerTitleView.swift in Sources */,
+				4A8B50001DE71683005BF073 /* SWImagePickerCell.swift in Sources */,
+				4A35E6D41DE8194500831D0B /* CollectionViewController.swift in Sources */,
+				4A8B50011DE71683005BF073 /* SWImagePickerController.swift in Sources */,
 				4A8B4FE91DE7164C005BF073 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +292,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: lukaibolkb@gmail.com (EC6EKUS6X5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9LJHCTN42A;
 				INFOPLIST_FILE = SWImagePickerController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kaibo.SWImagePickerController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -272,7 +308,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: lukaibolkb@gmail.com (EC6EKUS6X5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9LJHCTN42A;
 				INFOPLIST_FILE = SWImagePickerController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kaibo.SWImagePickerController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -299,6 +339,7 @@
 				4A8B4FF91DE7164C005BF073 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
