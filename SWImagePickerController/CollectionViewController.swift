@@ -24,6 +24,17 @@ class CollectionViewController: UICollectionViewController, SWImagePickerControl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        switch selectImageType {
+        case .PushSingle:
+            title = "Push Single"
+        case .PushMultiple:
+            title = "Push multiple"
+        case .PresentSingle:
+            title = "Present single"
+        default:
+            title = "Present multiple"
+        }
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(CollectionViewController.selectButtonClicked(_:)))
     }
     
