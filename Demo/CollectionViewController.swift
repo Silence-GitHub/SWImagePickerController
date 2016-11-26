@@ -28,11 +28,11 @@ class CollectionViewController: UICollectionViewController, SWImagePickerControl
         case .PushSingle:
             title = "Push Single"
         case .PushMultiple:
-            title = "Push multiple"
+            title = "Push Multiple"
         case .PresentSingle:
-            title = "Present single"
+            title = "Present Single"
         default:
-            title = "Present multiple"
+            title = "Present Multiple"
         }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(CollectionViewController.selectButtonClicked(_:)))
