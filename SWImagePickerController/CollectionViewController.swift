@@ -51,7 +51,7 @@ class CollectionViewController: UICollectionViewController, SWImagePickerControl
         }
     }
     
-    // MARK: Collection view data source
+    // MARK: - Collection view data source
 
     var images = [UIImage]()
 
@@ -70,7 +70,7 @@ class CollectionViewController: UICollectionViewController, SWImagePickerControl
         return cell
     }
 
-    // MARK: SWImagePickerControllerDelegate
+    // MARK: - SWImagePickerControllerDelegate
     
     func imagePickerController(_ picker: SWImagePickerController, didFinishPickingImageWithInfos infos: [[String : AnyObject]]) {
         

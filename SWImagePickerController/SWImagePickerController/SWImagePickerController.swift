@@ -19,7 +19,7 @@ let SWImagePickerControllerAssetLocalIdentifier = "AssetLocalIdentifier" // Valu
 
 class SWImagePickerController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate, SWImagePickerTitleViewDelegate {
     
-    // MARK: Properties
+    // MARK: - Properties
     
     weak var delegate: SWImagePickerControllerDelegate?
     var imageTargetSize = UIScreen.main.bounds.size
@@ -247,7 +247,7 @@ class SWImagePickerController: UIViewController, UICollectionViewDataSource, UIC
         }
     }
     
-    // MARK: View controller life cycle
+    // MARK: - View controller life cycle
     
     fileprivate static let imagePickerCellID = "Image_picker_cell_id"
     
@@ -340,7 +340,7 @@ class SWImagePickerController: UIViewController, UICollectionViewDataSource, UIC
         
     }
     
-    // MARK: Collection view data source
+    // MARK: - Collection view data source
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return assets.count
@@ -387,7 +387,7 @@ class SWImagePickerController: UIViewController, UICollectionViewDataSource, UIC
         }
     }
     
-    // MARK: Collection view delegate
+    // MARK: - Collection view delegate
     
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         if allowsMultipleSelection {
@@ -395,6 +395,8 @@ class SWImagePickerController: UIViewController, UICollectionViewDataSource, UIC
                 return false
             }
         } else {
+            // When multiple selection is not allowed, taping the selected cell to deselect it is not allowed
+            // Reload the selected cell here to deselect it
             let cell = collectionView.cellForItem(at: indexPath)!
             if cell.isSelected {
                 collectionView.reloadItems(at: [indexPath]) // to become not selected
@@ -409,17 +411,15 @@ class SWImagePickerController: UIViewController, UICollectionViewDataSource, UIC
         print("Select")
         selectedIndexPaths.append(indexPath)
         if let cell = collectionView.cellForItem(at: indexPath) as? SWImagePickerCell {
-            if cell.isSelected {
-                if allowsMultipleSelection {
-                    cell.selectLabel.text = String(selectedIndexPaths.count)
-                    cell.selectLabel.isHidden = false
-                } else {
-                    cell.selectImageView.image = #imageLiteral(resourceName: "Check_blue")
-                    cell.selectLabel.isHidden = true
-                }
+            if allowsMultipleSelection {
+                cell.selectLabel.text = String(selectedIndexPaths.count)
+                cell.selectLabel.isHidden = false
+            } else {
+                cell.selectImageView.image = #imageLiteral(resourceName: "Check_blue")
+                cell.selectLabel.isHidden = true
             }
         }
-        if selectedIndexPaths.count == maxSelectionCount {
+        if allowsMultipleSelection && selectedIndexPaths.count == maxSelectionCount {
             for indexPath2 in collectionView.indexPathsForVisibleItems {
                 if !selectedIndexPaths.contains(indexPath2),
                     let imagePickerCell = collectionView.cellForItem(at: indexPath2) as? SWImagePickerCell {
@@ -438,7 +438,7 @@ class SWImagePickerController: UIViewController, UICollectionViewDataSource, UIC
                 cell.selectLabel.text = String(i + 1)
             }
         }
-        if selectedIndexPaths.count == maxSelectionCount - 1 {
+        if allowsMultipleSelection && selectedIndexPaths.count == maxSelectionCount - 1 {
             for indexPath2 in collectionView.indexPathsForVisibleItems {
                 if !selectedIndexPaths.contains(indexPath2),
                     let imagePickerCell = collectionView.cellForItem(at: indexPath2) as? SWImagePickerCell {
@@ -448,7 +448,7 @@ class SWImagePickerController: UIViewController, UICollectionViewDataSource, UIC
         }
     }
     
-    // MARK: Table view data source
+    // MARK: - Table view data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return assetCollections.count
@@ -477,7 +477,7 @@ class SWImagePickerController: UIViewController, UICollectionViewDataSource, UIC
         fatalError("Can not return a cell")
     }
     
-    // MARK: Table view delegate
+    // MARK: - Table view delegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return SWImagePickerAlbumCell.cellHeight
@@ -508,7 +508,7 @@ class SWImagePickerController: UIViewController, UICollectionViewDataSource, UIC
         showNavigationTableView(false)
     }
     
-    // MARK: SWImagePickerTitleViewDelegate
+    // MARK: - SWImagePickerTitleViewDelegate
     
     func imagePickerTitleViewTapped(_ titleView: SWImagePickerTitleView) {
         showNavigationTableView(navigationTableView.transform.ty < 0)

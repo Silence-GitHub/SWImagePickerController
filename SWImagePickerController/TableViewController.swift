@@ -38,7 +38,7 @@ class TableViewController: UITableViewController {
         return cell
     }
 
-    // MARK: Table view delegate
+    // MARK: - Table view delegate
     
     fileprivate var selectedIndexPath: IndexPath?
     
