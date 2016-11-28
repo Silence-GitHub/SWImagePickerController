@@ -27,20 +27,13 @@ class TableViewController: UITableViewController {
 
         return cell
     }
-
-    // MARK: - Table view delegate
-    
-    fileprivate var selectedIndexPath: IndexPath?
-    
-    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        
-        selectedIndexPath = indexPath
-        
-        return indexPath
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let collectionVC = segue.destination as? CollectionViewController, let indexPath = selectedIndexPath {
+        guard let cell = sender as? UITableViewCell,
+            let indexPath = tableView.indexPath(for: cell)
+            else { return }
+        
+        if let collectionVC = segue.destination as? CollectionViewController {
             switch indexPath.row {
             case 0:
                 collectionVC.selectImageType = .PushSingle
