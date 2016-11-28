@@ -30,20 +30,19 @@ class TableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let cell = sender as? UITableViewCell,
-            let indexPath = tableView.indexPath(for: cell)
+            let indexPath = tableView.indexPath(for: cell),
+            let collectionVC = segue.destination as? CollectionViewController
             else { return }
         
-        if let collectionVC = segue.destination as? CollectionViewController {
-            switch indexPath.row {
-            case 0:
-                collectionVC.selectImageType = .PushSingle
-            case 1:
-                collectionVC.selectImageType = .PushMultiple
-            case 2:
-                collectionVC.selectImageType = .PresentSingle
-            default:
-                collectionVC.selectImageType = .PresentMultiple
-            }
+        switch indexPath.row {
+        case 0:
+            collectionVC.selectImageType = .PushSingle
+        case 1:
+            collectionVC.selectImageType = .PushMultiple
+        case 2:
+            collectionVC.selectImageType = .PresentSingle
+        default:
+            collectionVC.selectImageType = .PresentMultiple
         }
     }
 }
